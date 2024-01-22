@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { CartContext, CartDispatchContext } from '../components/cartContext';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Button from 'react-bootstrap/Button';
+import { ListGroup, Button, Row, Col, Badge  } from 'react-bootstrap';
 import ModifyCartModal from '../components/modifyCartModal';
 import CheckoutCartModal from '../components/checkoutModal';
 
@@ -32,23 +31,47 @@ const Cart = () => {
   return (
     <div>
       <h2 className='m-2'>My Cart</h2>
-      {Object.keys(cart).map((key,index) => (
-   
-          <ListGroup key={index} className='m-3'>
+      {Object.keys(cart).map((key, index) => (
+        <div key={index} className='m-3'>
+          <ListGroup>
             <ListGroup.Item>
-          <h4>{key}</h4>
-          {cart[key].map((entry,itemIndex) => (
-            <ListGroup key={itemIndex}>
-              <ListGroup.Item>
-                <p>{entry.itemCount}  x {entry.itemName}</p>
-                <p>${entry.totalPrice}</p>
-                <Button variant="info" onClick={()=>modifyCart(key,entry,itemIndex)} className='m-1'>Modify</Button>
-                <Button variant="danger" onClick={()=>removeFromCart(key,itemIndex)} className='m-1'>Remove</Button>
-                </ListGroup.Item>
-            </ListGroup>
-          ))}
-          </ListGroup.Item>
+              <h4>{key}</h4>
+              {cart[key].map((entry, itemIndex) => (
+                <div key={itemIndex}>
+                  <Row>
+                    <Col xs={8} sm={6} md={6}>
+                      <p>
+                        <Badge pill variant="primary" className="mr-2">
+                          {entry.itemCount}
+                        </Badge>
+                        <span className="font-weight-bold"> {entry.itemName}</span>
+                      </p>
+                    </Col>
+                    <Col xs={4} sm={3} md={3}>
+                      <p>${entry.totalPrice}</p>
+                    </Col>
+                    <Col xs={12} sm={3} md={3}>
+                      <Button
+                        variant="info"
+                        onClick={() => modifyCart(key, entry, itemIndex)}
+                        className='m-1'
+                      >
+                        Modify
+                      </Button>
+                      <Button
+                        variant="danger"
+                        onClick={() => removeFromCart(key, itemIndex)}
+                        className='m-1'
+                      >
+                        Remove
+                      </Button>
+                    </Col>
+                  </Row>
+                </div>
+              ))}
+            </ListGroup.Item>
           </ListGroup>
+        </div>
       ))}
 
       <ModifyCartModal 
