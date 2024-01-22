@@ -31,19 +31,19 @@ const Cart = () => {
   }
   return (
     <div>
-      <h2>My Cart</h2>
+      <h2 className='m-2'>My Cart</h2>
       {Object.keys(cart).map((key,index) => (
    
-          <ListGroup key={index}>
+          <ListGroup key={index} className='m-3'>
             <ListGroup.Item>
           <h4>{key}</h4>
           {cart[key].map((entry,itemIndex) => (
             <ListGroup key={itemIndex}>
               <ListGroup.Item>
                 <p>{entry.itemCount}  x {entry.itemName}</p>
-                <p>Total={entry.totalPrice}</p>
-                <Button variant="info" onClick={()=>modifyCart(key,entry,itemIndex)}>Modify</Button>
-                <Button variant="danger" onClick={()=>removeFromCart(key,itemIndex)}>Remove</Button>
+                <p>${entry.totalPrice}</p>
+                <Button variant="info" onClick={()=>modifyCart(key,entry,itemIndex)} className='m-1'>Modify</Button>
+                <Button variant="danger" onClick={()=>removeFromCart(key,itemIndex)} className='m-1'>Remove</Button>
                 </ListGroup.Item>
             </ListGroup>
           ))}
@@ -58,7 +58,7 @@ const Cart = () => {
       cartKey={cartModificationKey}
       index={cartModificationIndex}></ModifyCartModal>
       
-      {Object.keys(cart).length > 0 && <Button variant="success" className='m-4' onClick={()=>setShowCheckoutModal(true)}>Checkout</Button>}
+      {Object.keys(cart).length > 0 && <Button variant="success" className='m-3' onClick={()=>setShowCheckoutModal(true)}>Checkout</Button>}
       
       <CheckoutCartModal
       show={showCheckoutModal}

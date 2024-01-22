@@ -33,8 +33,8 @@ function CheckoutCartModal (props) {
                 <Table striped bordered hover>
                 <thead>
                     <tr>
-                    <th>Restaurant Name</th>
-                    <th>Item</th>
+                    <th>Restaurant</th>
+                    <th>Dish</th>
                     <th>Quantity</th>
                     <th>Price</th>
                     </tr>

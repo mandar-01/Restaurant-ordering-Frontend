@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
+import {Card,Row, Col} from 'react-bootstrap';
 
 const Restaurants = () => {
   
@@ -28,22 +29,27 @@ useEffect(()=>{
       fetchData();
 },[])
   return (
-    <div>
-      <h2>List of Restaurants</h2>
-      
-      {restaurants.map((restaurant,index) => (
-        <ListGroup key={index}>
-        <ListGroup.Item>
-            <h5>{restaurant.name}</h5>
-            {restaurant.location}
-            <Link to={`/restaurants/${restaurant.id}`} className="nav-link" style={{ color: 'blue' }}>
-                Check menu
-            </Link>
-            </ListGroup.Item>
-        </ListGroup>
+    <div className="mb-4">
+      <h2 className="text-center mb-4">Explore Our Restaurants</h2>
 
-      ))}
-      
+      <Row xs={1} md={2} lg={3} className="m-2">
+        {restaurants.map((restaurant, index) => (
+          <Col key={index} className="mb-4">
+            <Card className="h-100">
+              <Card.Img variant="top" src="images/restaurant.jpeg" alt={restaurant.name} style={{ height: '200px', objectFit: 'cover' }}/>
+              <Card.Body>
+                <Card.Title>{restaurant.name}</Card.Title>
+                <Card.Text>{restaurant.location}</Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <Link to={`/restaurants/${restaurant.id}`} className="btn btn-primary">
+                  Check Menu
+                </Link>
+              </Card.Footer>
+            </Card>
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };

@@ -43,13 +43,13 @@ function ModifyCartModal (props) {
                 <Modal.Title>{props.entry.itemName}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <div>Update quantity</div>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <Button variant="outline-secondary" onClick={handleDecrement} style={{ marginRight: '5px' }}>
+                <h5 className="m-2">Update quantity</h5>
+                <div style={{ display: 'flex', alignItems: 'center' }} className="m-2">
+                    <Button variant="outline-secondary" onClick={handleDecrement} style={{ marginRight: '10px' }}>
                         -
                     </Button>
-                    <span>{count}</span>
-                    <Button variant="outline-secondary" onClick={handleIncrement} style={{ marginLeft: '5px' }}>
+                    <span><b>{count}</b></span>
+                    <Button variant="outline-secondary" onClick={handleIncrement} style={{ marginLeft: '10px' }}>
                         +
                     </Button>
                 </div>
