@@ -1,14 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import CartModal from "../components/cartModal";
+import { CartContext } from "../components/cartContext";
 
 const Menu = ()=>{
     const { restaurantId } = useParams();
+    const cart = useContext(CartContext);
     const [restaurantDetails, setRestaurantDetails] = useState({});
     const [modalShow, setModalShow] = useState(false);
     const [itemIndex, setItemIndex] = useState(0);
+
+    const restaurantKey = restaurantDetails.name+"-"+restaurantDetails.location;
+    const isItemInCart = (itemName) => {
+      console.log("got item name "+itemName);
+      return (
+        cart[restaurantKey] &&
+        cart[restaurantKey].some((cartItem) => cartItem.itemName === itemName)
+      );
+    };
 
     useEffect(()=>{
         const fetchRestaurantDetails = async () => {
@@ -45,8 +56,17 @@ const Menu = ()=>{
         restaurantDetails.menu.map((item, index) => (
           <Col key={index} lg={4} md={6} sm={12} className="mb-4">
             <Card className="mb-4 d-flex flex-column h-100">
-              <Card.Body className="d-flex flex-column">
-                <Card.Title>{item.item}</Card.Title>
+              <Card.Body className="d-flex flex-column position-relative">
+                <Card.Title>
+                  {item.item} 
+                  {isItemInCart(item.item) && (
+                      <span className="text-success fs-6">
+                      <sup>
+                        <i className="bi bi-check-circle"></i> Added to Cart
+                      </sup>
+                      </span>
+                    )}
+                </Card.Title>
                 <Card.Text className="flex-grow-1">
                   {item.description}
                   <br />

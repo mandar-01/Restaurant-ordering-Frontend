@@ -42,7 +42,7 @@ const Cart = () => {
                     <Col xs={8} sm={6} md={6}>
                       <p>
                         <Badge pill variant="primary" className="mr-2">
-                          {entry.itemCount}
+                          {entry.itemCount}x
                         </Badge>
                         <span className="font-weight-bold"> {entry.itemName}</span>
                       </p>

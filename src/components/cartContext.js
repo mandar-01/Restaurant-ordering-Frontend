@@ -27,9 +27,29 @@ export function CartProvider({ children }) {
           };
 
         if (cart.hasOwnProperty(cartKey)) {
-            return {
+            const existingItemIndex = cart[cartKey].findIndex(
+              (item) => item.itemName === action.itemName
+            );
+            if (existingItemIndex !== -1) {
+              const updatedCart = {
                 ...cart,
-                [cartKey]:[...cart[cartKey], newItem]
+                [cartKey]: cart[cartKey].map((item, index) =>
+                  index === existingItemIndex
+                    ? {
+                        ...item,
+                        itemCount: item.itemCount + action.itemCount,
+                        totalPrice: item.totalPrice + action.totalPrice,
+                      }
+                    : item
+                ),
+              };
+          
+              return updatedCart;
+            } else {
+              return {
+                ...cart,
+                [cartKey]: [...cart[cartKey], newItem],
+              };
             }
         }
         else{
