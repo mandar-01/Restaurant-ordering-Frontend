@@ -15,7 +15,7 @@ export function CartProvider({ children }) {
     );
   }
 
-  function cartReducer(cart,action) { 
+  export function cartReducer(cart,action) { 
     switch (action.type){
       case 'add': {
         const cartKey = action.restaurantName+"-"+action.restaurantLocation;
