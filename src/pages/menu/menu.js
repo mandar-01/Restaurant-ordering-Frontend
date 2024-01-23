@@ -29,7 +29,7 @@ const Menu = ()=>{
                 restaurantId: restaurantId
                 });
               const response = await fetch(
-                `http://127.0.0.1:5000/getRestaurantDetails?${queryParams}`,
+                process.env.REACT_APP_API_URL+`getRestaurantDetails?${queryParams}`,
                 {
                   method: "GET",
                   headers: {
