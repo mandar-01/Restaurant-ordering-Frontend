@@ -40,10 +40,10 @@ function CartModal (props) {
         <>
         {Object.keys(props.restaurantDetails).length > 0 &&
         <Modal show={props.show} onHide={handleClose}>
-                <Modal.Header closeButton>
+            <Modal.Header closeButton>
                 <Modal.Title>{props.restaurantDetails.menu[props.itemIndex].item}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+            </Modal.Header>
+            <Modal.Body>
                 <h5 className="m-2">Choose quantity</h5>
                 <div style={{ display: 'flex', alignItems: 'center' }} className="m-2">
                     <Button variant="outline-secondary" onClick={handleDecrement} style={{ marginRight: '10px' }}>
@@ -54,15 +54,15 @@ function CartModal (props) {
                         +
                     </Button>
                 </div>
-                </Modal.Body>
-                <Modal.Footer>
+            </Modal.Body>
+            <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Cancel
                 </Button>
                 <Button variant="primary" onClick={addToCart}>
                     Add to cart
                 </Button>
-                </Modal.Footer>
+            </Modal.Footer>
             </Modal>
         }
         </>

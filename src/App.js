@@ -11,9 +11,9 @@ import { CartProvider } from './components/cartContext';
 
 function App() {
   return (
-    <CartProvider>
+    <CartProvider> 
      <Router>
-    <Navbar expand="lg" className="bg-body-tertiary">
+     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -27,8 +27,8 @@ function App() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
-    <Routes>
+     </Navbar>
+     <Routes>
         <Route path="/" element={<Restaurants />}/>
         <Route path="/cart" element={<Cart />}/>
         <Route path="/restaurants/:restaurantId" element={<Menu />}/>

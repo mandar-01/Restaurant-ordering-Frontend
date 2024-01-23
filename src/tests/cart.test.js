@@ -1,8 +1,8 @@
-import { CartContext, CartDispatchContext } from '../../components/cartContext';
+import { CartContext, CartDispatchContext } from '../components/cartContext';
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Cart from "./cart";
+import Cart from "../pages/cart/cart";
 
 describe('Remove from cart', () => {
     // tests if update works correctly by checking dispatch call parameters

@@ -39,10 +39,10 @@ function ModifyCartModal (props) {
         <>
         
         <Modal show={props.show} onHide={handleClose}>
-                <Modal.Header closeButton>
+            <Modal.Header closeButton>
                 <Modal.Title>{props.entry.itemName}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+            </Modal.Header>
+            <Modal.Body>
                 <h5 className="m-2">Update quantity</h5>
                 <div style={{ display: 'flex', alignItems: 'center' }} className="m-2">
                     <Button variant="outline-secondary" onClick={handleDecrement} style={{ marginRight: '10px' }}>
@@ -53,16 +53,16 @@ function ModifyCartModal (props) {
                         +
                     </Button>
                 </div>
-                </Modal.Body>
-                <Modal.Footer>
+            </Modal.Body>
+            <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Cancel
                 </Button>
                 <Button variant="primary" onClick={updateCart}>
                     Save
                 </Button>
-                </Modal.Footer>
-            </Modal>
+            </Modal.Footer>
+        </Modal>
         
         </>
     )

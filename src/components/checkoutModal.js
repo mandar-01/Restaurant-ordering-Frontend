@@ -26,10 +26,10 @@ function CheckoutCartModal (props) {
     
     return (
         <Modal size="lg" show={props.show} onHide={()=>props.setShow(false)}>
-                <Modal.Header closeButton>
+            <Modal.Header closeButton>
                 <Modal.Title>Confirm your order</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+            </Modal.Header>
+            <Modal.Body>
                 <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -53,15 +53,15 @@ function CheckoutCartModal (props) {
                 </tbody>
                 </Table>
                 <h6>Your total is ${total}</h6>
-                </Modal.Body>
-                <Modal.Footer>
+            </Modal.Body>
+            <Modal.Footer>
                 <Button variant="secondary" onClick={()=>props.setShow(false)}>
                     Cancel
                 </Button>
                 <Button variant="primary">
                     Make Payment
                 </Button>
-                </Modal.Footer>
+            </Modal.Footer>
          </Modal>
     )
 }
