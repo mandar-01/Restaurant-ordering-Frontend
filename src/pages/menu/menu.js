@@ -2,12 +2,13 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Button, Row, Col } from 'react-bootstrap';
-import CartModal from "../components/cartModal";
-import { CartContext } from "../components/cartContext";
+import CartModal from "../../components/cartModal";
+import { CartContext } from "../../components/cartContext";
 
 const Menu = ()=>{
     const { restaurantId } = useParams();
     const cart = useContext(CartContext);
+    console.log(cart);
     const [restaurantDetails, setRestaurantDetails] = useState({});
     const [modalShow, setModalShow] = useState(false);
     const [itemIndex, setItemIndex] = useState(0);
@@ -73,7 +74,7 @@ const Menu = ()=>{
                   <strong>${item.price}</strong>
                 </Card.Text>
                 <div className="text-center">
-                  <Button variant="primary" onClick={() => addToCart(index)}>
+                  <Button variant="primary" onClick={() => addToCart(index)} data-testid="addToCartButton">
                     Add to Cart
                   </Button>
                 </div>

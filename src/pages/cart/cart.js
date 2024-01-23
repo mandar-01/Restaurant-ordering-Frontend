@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { CartContext, CartDispatchContext } from '../components/cartContext';
+import { CartContext, CartDispatchContext } from '../../components/cartContext';
 import { ListGroup, Button, Row, Col, Badge  } from 'react-bootstrap';
-import ModifyCartModal from '../components/modifyCartModal';
-import CheckoutCartModal from '../components/checkoutModal';
+import ModifyCartModal from '../../components/modifyCartModal';
+import CheckoutCartModal from '../../components/checkoutModal';
 
 const Cart = () => {
   
@@ -62,6 +62,7 @@ const Cart = () => {
                         variant="danger"
                         onClick={() => removeFromCart(key, itemIndex)}
                         className='m-1'
+                        data-testid = {`remove${index}${itemIndex}`}
                       >
                         Remove
                       </Button>

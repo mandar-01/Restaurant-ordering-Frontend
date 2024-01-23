@@ -23,7 +23,7 @@ export function CartProvider({ children }) {
             itemName: action.itemName,
             itemCount: action.itemCount,
             itemPrice: action.itemPrice,
-            totalPrice: action.totalPrice
+            totalPrice: action.totalPrice     
           };
 
         if (cart.hasOwnProperty(cartKey)) {
