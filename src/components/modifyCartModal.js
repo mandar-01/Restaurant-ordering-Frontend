@@ -40,10 +40,10 @@ function ModifyCartModal (props) {
         
         <Modal show={props.show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>{props.entry.itemName}</Modal.Title>
+                <Modal.Title>{props.entry.itemName}-${count*props.entry.itemPrice}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h5 className="m-2">Update quantity</h5>
+                <h5 className="m-2">Select new quantity</h5>
                 <div style={{ display: 'flex', alignItems: 'center' }} className="m-2">
                     <Button variant="outline-secondary" onClick={handleDecrement} style={{ marginRight: '10px' }}>
                         -

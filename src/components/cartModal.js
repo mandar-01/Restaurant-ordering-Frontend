@@ -41,7 +41,7 @@ function CartModal (props) {
         {Object.keys(props.restaurantDetails).length > 0 &&
         <Modal show={props.show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>{props.restaurantDetails.menu[props.itemIndex].item}</Modal.Title>
+                <Modal.Title>{props.restaurantDetails.menu[props.itemIndex].item} - ${count*props.restaurantDetails.menu[props.itemIndex].price}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <h5 className="m-2">Choose quantity</h5>
