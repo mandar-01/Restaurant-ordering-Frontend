@@ -1,5 +1,5 @@
-import { CartContext, CartDispatchContext } from "../components/cartContext";
-import CartModal from "../components/cartModal";
+import { CartContext, CartDispatchContext } from "./components/cartContext";
+import CartModal from "./components/cartModal";
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';

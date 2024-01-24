@@ -1,4 +1,4 @@
-const {cartReducer} = require('../components/cartContext')
+const {cartReducer} = require('./components/cartContext')
 
 test('Add item to empty cart', () => {
     const cart = {}
