@@ -7,6 +7,6 @@ Before running this application, make sure you have started the backend Flask se
 
 # Run unit tests
 
-The application also has a few unit tests to cover critical operations of handling CRUD operations on the cart. To run the tests, go to the root directory of the project and run `npm test`. You should see an output like this:
+The application also has a few unit tests to cover critical operations of handling CRUD operations on the cart. To run the tests, go to the root directory of the project and run `npm test`. Press `a` to run all tests. You should see an output like this:
 
 ![image](https://github.com/mandar-01/Sweetgreen-Frontend/assets/22301384/f6459a5c-90fc-442e-bdc9-76eb635a26ca)
