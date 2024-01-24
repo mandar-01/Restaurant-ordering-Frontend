@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { CartContext, CartDispatchContext } from '../../components/cartContext';
-import { ListGroup, Button, Row, Col, Badge  } from 'react-bootstrap';
+import { ListGroup, Button, Row, Col, Badge, Alert  } from 'react-bootstrap';
 import ModifyCartModal from '../../components/modifyCartModal';
 import CheckoutCartModal from '../../components/checkoutModal';
 
@@ -30,7 +30,11 @@ const Cart = () => {
   }
   return (
     <div>
-      <h2 className='m-2'>My Cart</h2>
+      {Object.keys(cart).length === 0 && 
+      <Alert variant="info" className='m-2 mt-3'>
+      Your cart is empty. Add items to view them here.
+      </Alert>
+      }
       {Object.keys(cart).map((key, index) => (
         <div key={index} className='m-3'>
           <ListGroup>
