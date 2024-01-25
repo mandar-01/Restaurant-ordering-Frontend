@@ -3,7 +3,7 @@ This is a react application that has four restaurant locations to order from. Yo
 
 # Instructions to run
 
-Before running this application, make sure you have started the backend Flask server. Checkout https://github.com/mandar-01/Sweetgreen-Backend for more information. Clone this project on your local machine. This article assumes you have Node and npm installed on your machine. Run `npm install` from the root of this project directory. Once all the packages are installed, run `npm start` to start the local development server. Go to your browser at `http://localhost:3000/` to view the application.
+Before running this application, make sure you have started the backend Flask server. Checkout https://github.com/mandar-01/Restaurant-ordering-Backend for more information. Clone this project on your local machine. This article assumes you have Node and npm installed on your machine. Run `npm install` from the root of this project directory. Once all the packages are installed, run `npm start` to start the local development server. Go to your browser at `http://localhost:3000/` to view the application.
 
 Note that if you are running your backend on any port other than 5000, you need to change the port in the `.env` file provided.
 
