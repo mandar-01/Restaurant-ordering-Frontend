@@ -15,4 +15,4 @@ The application also has a few unit tests to cover critical operations of handli
 
 # Run using Docker
 
-To run the application using Docker, build an image using the given Dockerfile. Run `docker build -t sweetgreen_frontend .` from the root directory to build an image. Once an image is built, run `docker run -p 3000:3000 sweetgreen_frontend` to start the application. Visit `http://localhost:3000/` to view the application.
+To run the application using Docker, build an image using the given Dockerfile. Run `docker build -t frontend .` from the root directory to build an image. Once an image is built, run `docker run -p 3000:3000 frontend` to start the application. Visit `http://localhost:3000/` to view the application.
